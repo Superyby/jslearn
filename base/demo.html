@@ -19,6 +19,27 @@
     let age1 = 17
     document.write(`我今年${age}岁了,我叫${name},性别${sex}`)
 
+    // 类型转换
+    // 隐式转换(自动转换)
+    console.log(1 + 1) //整形
+    console.log("ok" + "yu") // 字符串
+    console.log(2 + "3")   // 23
+    console.log(2 - '1')  // 1
+    console.log(+"123")  // 123  转换为整形
+    console.log("1" - 1) // 0
+    // 显示转换
+    let str = '123'
+    console.log(Number(str)) // 123
+    let num = prompt('请输入数字') // 或在prompt前加+
+    console.log(Number(num))
+
+    console.log(parseInt('12px'))  // 12
+    console.log(parseInt('12.23px')) // 12
+
+    console.log(parseFloat('12.23px')) // 12.23
+    console.log(parseFloat('abc12.23px')) // NaN
+
+
 
 </script>
 
