@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    <!--首先排除var   let or const  const优先-->
+    // 有变量先给const   发现变化了 再改成let
+    // 数组/对象可以  除非你把arr开辟了了新数组 arr = [...]
+    const arr = ['red', 'blue']
+    arr.push('ok')
+    console.log(arr)
+</script>
+</body>
+</html>
