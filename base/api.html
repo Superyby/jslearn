@@ -1,17 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
-<script>
-    <!--首先排除var   let or const  const优先-->
-    // 有变量先给const   发现变化了 再改成let
-    // 数组/对象可以  除非你把arr开辟了了新数组 arr = [...]
-    const arr = ['red', 'blue']
-    arr.push('ok')
-    console.log(arr)
-</script>
-</body>
+  </head>
+  <body>
+    <div id="app">
+      <h1>API</h1>
+    </div>
+
+    <script>
+      <!--首先排除var   let or const  const优先-->
+      // 有变量先给const   发现变化了 再改成let
+      // 数组/对象可以  除非你把arr开辟了了新数组 arr = [...]
+      const arr = ["red", "blue"];
+      arr.push("ok");
+      console.log(arr);
+      // API 通过JS去改变html和浏览器
+      // DOM (文档对象模型---网页内容特效以及用户交互)   BOM(浏览器对象模型---浏览器相关的操作)
+
+      const h1 = document.querySelector("h1");
+      h1.style.color = "red";
+      // dir打印对象
+      console.dir(h1);
+    </script>
+  </body>
 </html>
