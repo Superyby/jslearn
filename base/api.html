@@ -1,28 +1,74 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>Title</title>
-  </head>
-  <body>
-    <div id="app">
-      <h1>API</h1>
-    </div>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>API</h1>
+</div>
+<div class="box">
+</div>
 
-    <script>
-      <!--首先排除var   let or const  const优先-->
-      // 有变量先给const   发现变化了 再改成let
-      // 数组/对象可以  除非你把arr开辟了了新数组 arr = [...]
-      const arr = ["red", "blue"];
-      arr.push("ok");
-      console.log(arr);
-      // API 通过JS去改变html和浏览器
-      // DOM (文档对象模型---网页内容特效以及用户交互)   BOM(浏览器对象模型---浏览器相关的操作)
+<p id="nav">111</p>
 
-      const h1 = document.querySelector("h1");
-      h1.style.color = "red";
-      // dir打印对象
-      console.dir(h1);
-    </script>
-  </body>
+<ul>
+    <li>测试</li>
+    <li>1</li>
+    <li>2</li>
+</ul>
+<script>
+    <!--首先排除var   let or const  const优先-->
+    // 有变量先给const   发现变化了 再改成let
+    // 数组/对象可以  除非你把arr开辟了了新数组 arr = [...]
+    const arr = ["red", "blue"];
+    arr.push("ok");
+    console.log(arr);
+    // API 通过JS去改变html和浏览器
+    // DOM (文档对象模型---网页内容特效以及用户交互)   BOM(浏览器对象模型---浏览器相关的操作)
+
+    const h1 = document.querySelector("h1");
+    h1.style.color = "red";
+    // dir打印对象
+    console.dir(h1);
+
+
+    // 获取DOM对象
+    // 1. 根据CSS选择器来获取DOM元素
+    // 2. 其他方式
+
+    // 1.1 选择匹配的第一个元素  返回值:对象
+    const box = document.querySelector('.box');
+    console.log(box)
+
+    const nav = document.querySelector('#nav')
+    console.log(nav)
+    // 单个元素   可以变样式
+    nav.style.color = 'cyan'
+
+    const li = document.querySelector('ul li:first-child')
+    console.log(li)
+
+    // 选多个   多个元素不能变样式
+    const liAll = document.querySelectorAll('ul li')
+    console.log(liAll)  // 伪数组
+    // 要得到伪数组中的每一个对象，for遍历 并改颜色 条件用let  因为i++
+    for (let i = 0; i < liAll.length; i++) {
+        console.log(liAll[i])
+        const li = liAll[i]
+        li.style.color = 'cyan'
+    }
+    // 1.2 其他方式(了解)
+    document.getElementById('nav')
+    document.getElementsByTagName('div')
+    document.getElementsByClassName('w')
+</script>
+</body>
 </html>
