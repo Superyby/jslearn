@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">我是文字内容</div>
+
+<div class="wrapper">
+    <strong>
+        <h1>一等奖：<span id="one">???</span></h1>
+        <h2>二等奖：<span id="two">???</span></h2>
+        <h3>三等奖：<span id="three">???</span></h3>
+    </strong>
+</div>
+<script>
+    const box = document.querySelector('.box')
+    // 修改文字内容 对象.innerText 属性不加括号  纯文本 不解析标签
+    box.innerText = "<strong>你好</strong>"
+    // 修改文字内容 元素.innerHTML 属性不加括号  解析标签
+    box.innerHTML = "<strong>ok</strong>"
+
+    const arr = ['ok1', 'ok2', 'ok3', 'ok4', 'ok5']
+    // 一等奖  获取随机数   数组的下标
+    const random = Math.floor(Math.random() * arr.length)
+    console.log(arr[random])
+
+    // 获取one元素
+    const one = document.querySelector('#one')
+    one.innerHTML = arr[random]
+    // 删除一个
+    arr.splice(random, 1)
+    console.log(arr)
+</script>
+</body>
+</html>
