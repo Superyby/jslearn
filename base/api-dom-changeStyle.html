@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            background-color: aqua;
+        } */
+        .box{
+            width: 200px;
+            height: 200px;
+            /* background-color: bisque; */
+            color: black;
+            font-family: 鸿蒙黑体;
+        }
+        .active{
+            color: yellow;
+            background-color: tan;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 改变元素样式属性 -->
+    <!-- 1.通过style 改变CSS 2. 改变类名(className)来动CSS   3.classList控制CSS-->
+    <!-- 对象.style.属性 = 值 -->
+    <h1 style="color: red;">111</h1>
+
+    <div class="ok">
+        <h1>222</h1>
+    </div>
+
+    <div class="box">
+        文字
+    </div>
+    <script>
+        // 1. 用style属性来改
+        let h1 = document.querySelector("h1");
+        h1.style.color = "cyan";
+
+        // 2. className    元素.className = 值  值是一个class类名
+        const myDiv = document.querySelector(".ok");
+        // myDiv.className = 'box'    // 打开注释会影响3
+
+        // 3. 用classList
+        // 追加一个类：元素.classList.add('类名')  删除一个类：元素.classList.remove('类名')    切换一个类：元素.classList.toggle('类名')
+        const list = document.querySelector(".box");
+        list.classList.add('active'); // 类名不加.  并且是字符串
+        list.classList.remove('active');
+        list.classList.toggle('active'); // 切换
+    </script>
+</body>
+
+</html>
